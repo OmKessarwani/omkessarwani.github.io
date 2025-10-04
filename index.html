@@ -484,6 +484,12 @@
             overflow: hidden;
         }
         
+        .profile-image-inner picture {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        
         .profile-image-inner img {
             width: 100%;
             height: 100%;
@@ -1243,7 +1249,10 @@
             <div class="hero-content">
                 <div class="profile-image" role="img" aria-label="Om Kesarwani - Frontend Developer">
                     <div class="profile-image-inner">
-                        <img src="OmKesarwani.jpg" alt="Om Kesarwani" />
+                        <picture>
+                            <source srcset="OmKesarwani.webp" type="image/webp">
+                            <img src="OmKesarwani.jpg" alt="Om Kesarwani" />
+                        </picture>
                     </div>
                 </div>
                 <h1 itemprop="name">Om  Kesarwani</h1>
