@@ -68,8 +68,9 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Fonts - Optimized for performance -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
     
     <!-- Structured Data / JSON-LD for SEO -->
     <script type="application/ld+json">
@@ -1254,7 +1255,7 @@
                     <div class="profile-image-inner">
                         <picture>
                             <source srcset="OmKesarwani.webp" type="image/webp">
-                            <img src="OmKesarwani.jpg" alt="Om Kesarwani" />
+                            <img src="OmKesarwani.jpg" alt="Om Kesarwani" width="180" height="180" loading="eager" />
                         </picture>
                     </div>
                 </div>
