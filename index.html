@@ -1843,13 +1843,19 @@
         // STAT CARDS ANIMATION ON SCROLL
         // ============================================
         
+        // Get all stat cards upfront to maintain correct indexing
+        const allStatCards = Array.from(document.querySelectorAll('.stat-card'));
+        
         const statObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting && !entry.target.dataset.animated) {
                     entry.target.dataset.animated = 'true';
                     
-                    // Get the config for this stat card based on its index
-                    const statConfig = CONFIG.stats[index];
+                    // Get the correct index of this card in the DOM
+                    const cardIndex = allStatCards.indexOf(entry.target);
+                    
+                    // Get the config for this stat card based on its DOM index
+                    const statConfig = CONFIG.stats[cardIndex];
                     if (statConfig) {
                         animateStat(entry.target, statConfig);
                     }
@@ -1858,7 +1864,7 @@
         }, { threshold: 0.5 });
 
         // Observe all stat cards
-        document.querySelectorAll('.stat-card').forEach(card => {
+        allStatCards.forEach(card => {
             statObserver.observe(card);
         });
 
