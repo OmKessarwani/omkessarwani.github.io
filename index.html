@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Om Prakash Kesarwani - Senior Technical Lead | Frontend Architect with 10+ years of experience">
+    <title>Om Prakash Kesarwani | Frontend Architect</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #8b5cf6;
+            --secondary-dark: #7c3aed;
+            --accent: #06b6d4;
+            --bg-dark: #0f172a;
+            --bg-darker: #020617;
+            --bg-card: rgba(30, 41, 59, 0.5);
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, #1e1b4b 50%, var(--bg-darker) 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        .bg-animation::before,
+        .bg-animation::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .bg-animation::before {
+            background: var(--primary);
+            top: -200px;
+            right: -200px;
+            animation-delay: 0s;
+        }
+
+        .bg-animation::after {
+            background: var(--secondary);
+            bottom: -200px;
+            left: -200px;
+            animation-delay: 5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(100px, -100px) scale(1.1); }
+            66% { transform: translate(-100px, 100px) scale(0.9); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            transition: transform 0.3s ease;
+        }
+
+        nav.hidden {
+            transform: translateY(-100%);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Header/Hero */
+        header {
+            padding: 10rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 5px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(59, 130, 246, 0); }
+        }
+
+        .profile-image-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: var(--bg-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa, #60a5fa);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 8s ease infinite;
+        }
+
+        @keyframes gradient {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            color: var(--primary);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            border-color: var(--border);
+            color: var(--text-primary);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            font-size: 1.5rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .skill-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--text-primary);
+            transform: translateX(5px);
+        }
+
+        .skill-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            flex-shrink: 0;
+        }
+
+        /* Experience Timeline */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .experience-item {
+            position: relative;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .experience-header h3 {
+            font-size: 1.75rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .experience-header .company {
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .experience-header .period {
+            color: var(--text-muted);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .achievement-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .achievement-item {
+            display: flex;
+            gap: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .achievement-item::before {
+            content: '▹';
+            color: var(--success);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* Education Grid */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-item h3 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .institution {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .year {
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Professional Summary */
+        .summary-text {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 900px;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 5rem;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: none;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            header {
+                padding: 8rem 0 4rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="nav-logo">OPK</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header/Hero -->
+    <header>
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-image">
+                    <div class="profile-image-inner">
+                        💻
+                    </div>
+                </div>
+                <h1>Om Prakash Kesarwani</h1>
+                <p class="subtitle">Senior Technical Lead | Frontend Architect | 10.5 Years Experience</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Bangalore</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <span>omkes02@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>+91 9235355900</span>
+                    </div>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="https://linkedin.com/in/om-kesarwani-38934062" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <span>💼</span>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/OmKessarwani" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <span>🔗</span>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Professional Summary -->
+        <section id="about">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-icon">📄</div>
+                    <h2>Professional Summary</h2>
+                </div>
+                <p class="summary-text">
+                    Frontend engineering leader with 10+ years of experience building scalable UI platforms, SDKs, and hybrid mobile apps. 
+                    Proven expertise in React, Next.js, and performance optimization. Skilled in leading high-performing teams, delivering 
+                    cross-functional projects, and driving architectural improvements.
+                </p>
+            </div>
+        </section>
+
+        <!-- Core Skills -->
+        <section id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-icon">⚡</div>
+                    <h2>Core Skills</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="card skill-category">
+                        <h3>Frontend</h3>
+                        <ul class="skill-list">
+                            <li class="skill-item"><span class="skill-dot"></span>React</li>
+                            <li class="skill-item"><span class="skill-dot"></span>Next.js</li>
+                            <li class="skill-item"><span class="skill-dot"></span>Redux</li>
+                            <li class="skill-item"><span class="skill-dot"></span>Angular</li>
+                            <li class="skill-item"><span class="skill-dot"></span>AngularJS</li>
+                            <li class="skill-item"><span class="skill-dot"></span>React Native</li>
+                            <li class="skill-item"><span class="skill-dot"></span>Hybrid Apps</li>
+                        </ul>
+                    </div>
+                    <div class="card skill-category">
+                        <h3>Tooling</h3>
+                        <ul class="skill-list">
+                            <li class="skill-item"><span class="skill-dot"></span>Webpack</li>
+                            <li class="skill-item"><span class="skill-dot"></span>Rollup</li>
+                            <li class="skill-item"><span class="skill-dot"></span>Storybook</li>
+                            <li class="skill-item"><span class="skill-dot"></span>Jest</li>
+                            <li class="skill-item"><span class="skill-dot"></span>React Testing Library</li>
+                            <li class="skill-item"><span class="skill-dot"></span>Visual Testing</li>
+                            <li class="skill-item"><span class="skill-dot"></span>CI/CD</li>
+                        </ul>
+                    </div>
+                    <div class="card skill-category">
+                        <h3>Architecture & Leadership</h3>
+                        <ul class="skill-list">
+                            <li class="skill-item"><span class="skill-dot"></span>SDK Design</li>
+                            <li class="skill-item"><span class="skill-dot"></span>Performance Optimization</li>
+                            <li class="skill-item"><span class="skill-dot"></span>Cross-functional Delivery</li>
+                            <li class="skill-item"><span class="skill-dot"></span>Team Leadership</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-icon">💼</div>
+                    <h2>Work Experience</h2>
+                </div>
+                <div class="experience-list">
+                    <!-- Paytm -->
+                    <div class="card experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>Senior Technical Lead</h3>
+                                <div class="company">Paytm</div>
+                            </div>
+                            <div class="period">May 2022 – Present</div>
+                        </div>
+                        <ul class="achievement-list">
+                            <li class="achievement-item">Led development of central Frontend SDK powering ~90% of Paytm app pages with dynamic widgets from API-driven configurations</li>
+                            <li class="achievement-item">Architected SDK with Rollup + Shadow DOM, implementing lazy-loading and optimized data flow → improved Core Web Vitals</li>
+                            <li class="achievement-item">Introduced Ads visibility tracking via OM-SDK integration for industry-standard ad measurement</li>
+                            <li class="achievement-item">Built infrastructure for unit testing (Jest + RTL) and visual regression testing → reduced regression cycles from 1 week to 3 hours</li>
+                            <li class="achievement-item">Authored documentation for 65+ widgets and established release planning process</li>
+                            <li class="achievement-item">Created "Z-One" VS Code extension powered by MCP tools to streamline developer workflows</li>
+                            <li class="achievement-item">Led and mentored 4-member team while contributing hands-on coding</li>
+                        </ul>
+                    </div>
+
+                    <!-- Optum -->
+                    <div class="card experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>Senior Software Engineer</h3>
+                                <div class="company">Optum</div>
+                            </div>
+                            <div class="period">Jan 2021 – May 2022</div>
+                        </div>
+                        <ul class="achievement-list">
+                            <li class="achievement-item">Built responsive PWA using Next.js with service workers & web workers → improved performance and client retention</li>
+                            <li class="achievement-item">Developed web-based Citizen Benefit Management System using React, React JSON Schema, and Redux</li>
+                        </ul>
+                    </div>
+
+                    <!-- Deloitte -->
+                    <div class="card experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>Consultant</h3>
+                                <div class="company">Deloitte</div>
+                            </div>
+                            <div class="period">Feb 2019 – Jan 2021</div>
+                        </div>
+                        <ul class="achievement-list">
+                            <li class="achievement-item">Developed graphing component in Angular v4 using native APIs, eliminating external library dependency</li>
+                            <li class="achievement-item">Delivered Citizen Benefit Management System in Salesforce LWC and conducted developer training</li>
+                            <li class="achievement-item">Built scalable React Native Child Welfare product with offline support and Salesforce integration</li>
+                            <li class="achievement-item">Designed atomic component architecture + flag-based Redux flow for dynamic CRUD modules</li>
+                            <li class="achievement-item">Created code generation system that auto-produced 200+ React Native pages</li>
+                            <li class="achievement-item">Built tool to convert Salesforce Aura components into LWC for legacy migration</li>
+                        </ul>
+                    </div>
+
+                    <!-- Nagarro -->
+                    <div class="card experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>Senior Associate Technology</h3>
+                                <div class="company">Nagarro</div>
+                            </div>
+                            <div class="period">Jun 2018 – Feb 2019</div>
+                        </div>
+                        <ul class="achievement-list">
+                            <li class="achievement-item">Developed React Native child welfare application with offline record maintenance and media capture</li>
+                            <li class="achievement-item">Took ownership after lead transition, delivering features independently</li>
+                            <li class="achievement-item">Implemented Redux state management and Realm DB for stable offline performance</li>
+                        </ul>
+                    </div>
+
+                    <!-- TCS -->
+                    <div class="card experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>System Engineer</h3>
+                                <div class="company">TCS</div>
+                            </div>
+                            <div class="period">Feb 2015 – Jun 2018</div>
+                        </div>
+                        <ul class="achievement-list">
+                            <li class="achievement-item">Built hybrid mobile and responsive web apps using AngularJS, Angular 2+, Ionic, Cordova</li>
+                            <li class="achievement-item">Led teams of 2–4 engineers across multiple projects while remaining hands-on</li>
+                            <li class="achievement-item">Collaborated with backend leads for API integration and client requirements</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-icon">🎓</div>
+                    <h2>Education</h2>
+                </div>
+                <div class="education-grid">
+                    <div class="card education-item">
+                        <h3>MCA</h3>
+                        <p class="institution">SASTRA University, Thanjavur</p>
+                        <p class="year">2018</p>
+                    </div>
+                    <div class="card education-item">
+                        <h3>BCA</h3>
+                        <p class="institution">CSJM University, Kanpur</p>
+                        <p class="year">2014</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Om Prakash Kesarwani. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        ↑
+    </button>
+
+    <script>
+        // Navbar hide/show on scroll
+        let lastScroll = 0;
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                navbar.classList.remove('hidden');
+                return;
+            }
+            
+            if (currentScroll > lastScroll && currentScroll > 80) {
+                navbar.classList.add('hidden');
+            } else {
+                navbar.classList.remove('hidden');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Fade in animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('fade-in');
+                    }, index * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .summary-text, .section-header').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
