@@ -2098,6 +2098,70 @@
         //    - Lower number = faster animation
         //
         // ============================================
+
+        // ============================================
+        // SECTION VISIT TRACKING (Google Analytics)
+        // ============================================
+        
+        // Track section views when they come into viewport (scroll-based)
+        const trackSectionVisits = () => {
+            const sections = document.querySelectorAll('section[id]');
+            const tracked = new Set();
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+                        const sectionId = entry.target.id;
+                        
+                        // Track only once per page load
+                        if (!tracked.has(sectionId)) {
+                            tracked.add(sectionId);
+                            
+                            // Send section view event
+                            if (typeof gtag !== 'undefined') {
+                                gtag('event', 'section_view', {
+                                    section_name: sectionId,
+                                    engagement_type: 'scroll'
+                                });
+                            }
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.5 // Track when 50% of section is visible
+            });
+
+            sections.forEach(section => observer.observe(section));
+        };
+
+        // Track navigation link clicks
+        const trackNavigationClicks = () => {
+            const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const sectionId = link.getAttribute('href').substring(1);
+                    
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'navigation_click', {
+                            section_name: sectionId,
+                            link_text: link.textContent.trim()
+                        });
+                    }
+                });
+            });
+        };
+
+        // Initialize tracking when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                trackSectionVisits();
+                trackNavigationClicks();
+            });
+        } else {
+            trackSectionVisits();
+            trackNavigationClicks();
+        }
         
     </script>
 </body>
