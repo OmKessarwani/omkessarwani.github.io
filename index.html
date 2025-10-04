@@ -72,6 +72,23 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
     
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SWW8VK17B2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SWW8VK17B2', {
+            'send_page_view': true,
+            'anonymize_ip': true
+        });
+
+        // Conversion tracking helper function
+        function trackConversion(eventName, eventParams = {}) {
+            gtag('event', eventName, eventParams);
+        }
+    </script>
+    
     <!-- Structured Data / JSON-LD for SEO -->
     <script type="application/ld+json">
     {
@@ -1237,7 +1254,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="OmKesarwani_Resume_October_2025.pdf" download="Om_Kesarwani_Resume.pdf" class="resume-link">Resume</a></li>
+                <li><a href="OmKesarwani_Resume_October_2025.pdf" download="Om_Kesarwani_Resume.pdf" class="resume-link" onclick="trackConversion('resume_download', {location: 'navigation'})">Resume</a></li>
             </ul>
             <button class="menu-toggle" aria-label="Toggle menu">
                 <span></span>
@@ -1272,24 +1289,24 @@
                     </div>
                     <div class="contact-item">
                         <span aria-hidden="true">📧</span>
-                        <a href="mailto:omkes02@gmail.com" itemprop="email" style="color: inherit; text-decoration: none;">omkes02@gmail.com</a>
+                        <a href="mailto:omkes02@gmail.com" itemprop="email" style="color: inherit; text-decoration: none;" onclick="trackConversion('email_click', {location: 'hero_contact'})">omkes02@gmail.com</a>
                     </div>
                     <div class="contact-item">
                         <span aria-hidden="true">📱</span>
-                        <a href="tel:+919235355900" itemprop="telephone" style="color: inherit; text-decoration: none;">+91 9235355900</a>
+                        <a href="tel:+919235355900" itemprop="telephone" style="color: inherit; text-decoration: none;" onclick="trackConversion('phone_click', {location: 'hero_section'})">+91 9235355900</a>
                     </div>
                 </div>
 
                 <div class="cta-buttons">
-                    <a href="https://linkedin.com/in/om-kesarwani-38934062" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <a href="https://linkedin.com/in/om-kesarwani-38934062" target="_blank" rel="noopener noreferrer" class="btn btn-primary" onclick="trackConversion('linkedin_click', {location: 'hero_section'})">
                         <span>💼</span>
                         Connect on LinkedIn
                     </a>
-                    <a href="https://github.com/OmKessarwani" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    <a href="https://github.com/OmKessarwani" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" onclick="trackConversion('github_click', {location: 'hero_section'})">
                         <span>🔗</span>
                         View GitHub
                     </a>
-                    <a href="mailto:omkes02@gmail.com" class="btn btn-secondary">
+                    <a href="mailto:omkes02@gmail.com" class="btn btn-secondary" onclick="trackConversion('email_click', {location: 'hero_section'})">
                         <span>📧</span>
                         Email Me
                     </a>
@@ -1720,27 +1737,32 @@
                 <h4 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.15rem;">Let's Connect</h4>
                 <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
                     <a href="https://linkedin.com/in/om-kesarwani-38934062" target="_blank" rel="noopener noreferrer" 
-                       style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;">
+                       style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;"
+                       onclick="trackConversion('linkedin_click', {location: 'footer'})">
                         <span style="font-size: 1.5rem;">💼</span>
                         <span>LinkedIn</span>
                     </a>
                     <a href="https://github.com/OmKessarwani" target="_blank" rel="noopener noreferrer" 
-                       style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;">
+                       style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;"
+                       onclick="trackConversion('github_click', {location: 'footer'})">
                         <span style="font-size: 1.5rem;">🔗</span>
                         <span>GitHub</span>
                     </a>
                     <a href="mailto:omkes02@gmail.com" 
-                       style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;">
+                       style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;"
+                       onclick="trackConversion('email_click', {location: 'footer'})">
                         <span style="font-size: 1.5rem;">📧</span>
                         <span>Email</span>
                     </a>
                     <a href="tel:+919235355900" 
-                       style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;">
+                       style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;"
+                       onclick="trackConversion('phone_click', {location: 'footer'})">
                         <span style="font-size: 1.5rem;">📱</span>
                         <span>Phone</span>
                     </a>
                     <a href="OmKesarwani_Resume_October_2025.pdf" download="Om_Kesarwani_Resume.pdf"
-                       style="color: var(--primary); text-decoration: none; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.5rem; font-weight: 600;">
+                       style="color: var(--primary); text-decoration: none; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.5rem; font-weight: 600;"
+                       onclick="trackConversion('resume_download', {location: 'footer'})">
                         <span style="font-size: 1.5rem;">📄</span>
                         <span>Download Resume</span>
                     </a>
@@ -1759,7 +1781,7 @@
     </footer>
 
     <!-- Floating Resume Button -->
-    <a href="OmKesarwani_Resume_October_2025.pdf" download="Om_Kesarwani_Resume.pdf" class="floating-resume" id="floatingResume" aria-label="Download Resume">
+    <a href="OmKesarwani_Resume_October_2025.pdf" download="Om_Kesarwani_Resume.pdf" class="floating-resume" id="floatingResume" aria-label="Download Resume" onclick="trackConversion('resume_download', {location: 'floating_button'})">
         <span class="fab-icon">📄</span>
         <span class="fab-text">Resume</span>
     </a>
