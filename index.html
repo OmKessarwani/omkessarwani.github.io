@@ -376,6 +376,11 @@
         .hero-role{font-family:var(--d);font-weight:500;font-size:clamp(1.1rem,2.6vw,1.6rem);margin-bottom:12px;line-height:1.3}
         .hero-role b{color:var(--signal);font-weight:500}
         .hero-sub{color:var(--muted);max-width:660px;margin-bottom:34px;font-size:1.02rem}
+        .hero-grid{display:flex;align-items:center;gap:3rem;justify-content:space-between}
+        .hero-main{flex:1;min-width:0}
+        .hero-photo{flex-shrink:0;width:220px;height:220px;position:relative}
+        .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 0;border-radius:16px;border:1px solid var(--edge-br);display:block}
+        .hero-photo::after{content:'';position:absolute;top:-7px;right:-7px;width:14px;height:14px;background:var(--signal);border-radius:50%;box-shadow:0 0 12px var(--signal);border:3px solid var(--canvas)}
 
         /* hero contact row */
         .contact-info{display:flex;flex-wrap:wrap;gap:1.4rem;margin-bottom:32px;font-family:var(--m);font-size:.82rem;color:var(--muted)}
@@ -485,6 +490,8 @@
             .nav-links.active{display:flex}
             .menu-toggle{display:flex}
             header{padding:110px 0 50px}
+            .hero-grid{flex-direction:column;align-items:flex-start;gap:1.6rem}
+            .hero-photo{order:-1;width:130px;height:130px}
             section{padding:48px 0}
             .stats-grid{grid-template-columns:repeat(2,1fr)}
             .experience-header{flex-direction:column}
@@ -524,6 +531,8 @@
     <!-- Hero -->
     <header role="banner" itemscope itemtype="https://schema.org/Person">
         <div class="container">
+            <div class="hero-grid">
+            <div class="hero-main">
             <div class="status"><span class="dot"></span>OPEN TO ROLES · BANGALORE / REMOTE / HYBRID</div>
             <h1 itemprop="name">Om <span class="k">Kesarwani</span></h1>
             <p class="hero-role" itemprop="jobTitle">Engineering Lead — building <b>agentic AI platforms</b> at scale</p>
@@ -539,6 +548,14 @@
                 <a href="Om-Kesarwani-Resume.pdf" download="Om-Kesarwani-Resume.pdf" class="btn btn-primary" onclick="trackConversion('resume_download', {location: 'hero_section'})">Resume ↓</a>
                 <a href="https://linkedin.com/in/om-kesarwani-38934062" target="_blank" rel="noopener noreferrer" class="btn" onclick="trackConversion('linkedin_click', {location: 'hero_section'})">LinkedIn ↗</a>
                 <a href="https://github.com/OmKessarwani" target="_blank" rel="noopener noreferrer" class="btn" onclick="trackConversion('github_click', {location: 'hero_section'})">GitHub ↗</a>
+            </div>
+            </div>
+            <div class="hero-photo">
+                <picture>
+                    <source srcset="OmKesarwani.webp" type="image/webp">
+                    <img src="OmKesarwani.jpg" itemprop="image" alt="Om Kesarwani — Engineering Lead" width="220" height="220" loading="eager">
+                </picture>
+            </div>
             </div>
         </div>
     </header>
