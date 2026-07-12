@@ -60,19 +60,12 @@
     <meta name="industries" content="Fintech, Healthcare Tech, E-commerce, SaaS, Enterprise Software">
     <meta name="linkedin:profile" content="https://linkedin.com/in/om-kesarwani-38934062">
     
-    <!-- Performance & Resource Hints -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    
-    <!-- Fonts - Optimized for performance -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Self-hosted fonts (no third-party requests) — preload the above-the-fold weights -->
+    <link rel="preload" href="fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
     <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
     
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SWW8VK17B2"></script>
+    <!-- Google Analytics 4 (library loaded lazily to stay off the critical path) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -82,10 +75,23 @@
             'anonymize_ip': true
         });
 
-        // Conversion tracking helper function
+        // Conversion tracking helper (queues events until gtag.js loads)
         function trackConversion(eventName, eventParams = {}) {
             gtag('event', eventName, eventParams);
         }
+
+        // Defer the GA library until the page has loaded / is idle
+        function loadGA(){
+            if (window.__gaLoaded) return; window.__gaLoaded = 1;
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SWW8VK17B2';
+            document.head.appendChild(s);
+        }
+        if (document.readyState === 'complete') loadGA();
+        else window.addEventListener('load', function(){
+            ('requestIdleCallback' in window) ? requestIdleCallback(loadGA, {timeout: 3000}) : setTimeout(loadGA, 1200);
+        });
     </script>
     
     <!-- Structured Data / JSON-LD for SEO -->
@@ -299,6 +305,16 @@
     </script>
     
     <style>
+        @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/space-grotesk-400.woff2') format('woff2')}
+        @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/space-grotesk-500.woff2') format('woff2')}
+        @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/space-grotesk-700.woff2') format('woff2')}
+        @font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/inter-400.woff2') format('woff2')}
+        @font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/inter-500.woff2') format('woff2')}
+        @font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/inter-600.woff2') format('woff2')}
+        @font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/inter-700.woff2') format('woff2')}
+        @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/jetbrains-mono-400.woff2') format('woff2')}
+        @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/jetbrains-mono-500.woff2') format('woff2')}
+        @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/jetbrains-mono-700.woff2') format('woff2')}
         *{margin:0;padding:0;box-sizing:border-box}
 
         :root{
