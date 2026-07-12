@@ -1,11 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <defs>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <circle cx="50" cy="50" r="48" fill="url(#grad1)"/>
-  <text x="50" y="70" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">Om</text>
+  <rect width="100" height="100" rx="24" fill="#0A0C10"/>
+  <line x1="41" y1="57" x2="72" y2="30" stroke="#B8FF3C" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="41,35 63,57 41,79 19,57" fill="#B8FF3C"/>
+  <circle cx="74" cy="28" r="9" fill="#B8FF3C"/>
 </svg>
-
