@@ -1,12 +1,12 @@
-# Om Prakash Kesarwani | Frontend Architect | Staff Engineer | Engineering Manager
+# Om Prakash Kesarwani | Engineering Lead | Frontend Architect | Staff Engineer | Engineering Manager
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live-success?style=for-the-badge&logo=vercel)](https://omkessarwani.github.io)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-success?style=for-the-badge&logo=vercel)](https://omkesarwani.dev)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/om-kesarwani-38934062)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github)](https://github.com/OmKessarwani)
 [![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:omkes02@gmail.com)
-[![Open to Work](https://img.shields.io/badge/Status-Open_to_Opportunities-brightgreen?style=for-the-badge)](https://omkessarwani.github.io)
+[![Open to New Opportunity](https://img.shields.io/badge/Status-Open_to_Opportunities-brightgreen?style=for-the-badge)](https://omkesarwani.dev)
 
-> 💼 **Available for Frontend Architect, Staff/Principal Engineer, and Engineering Manager roles** | 10.5+ years of engineering leadership, architecting scalable solutions, and building high-performing teams at Paytm, Optum, Deloitte.
+> 💼 **Available for Frontend Architect, Principal Engineer, and Engineering Manager roles** | 11+ years of engineering leadership, architecting scalable solutions, and building high-performing teams at Paytm, Optum, Deloitte.
 
 ---
 
@@ -14,9 +14,10 @@
 
 **Open to opportunities in:**
 - 🏗️ **Frontend Architect** - Leading technical architecture and engineering standards
-- 👨‍💼 **Staff Engineer / Principal Engineer** - High-impact technical leadership and mentorship
+- 👨‍💼 **Principal Engineer** - High-impact technical leadership and mentorship
+- 🚀 **Engineering Lead** - Driving technical strategy and cross-functional delivery
 - 👥 **Engineering Manager** - Building and leading high-performing frontend teams
-- 🚀 **Technical Lead** - Driving technical strategy and cross-functional delivery
+
 
 **Location Preferences:** Bangalore | Remote | Hybrid
 
@@ -24,7 +25,7 @@
 
 ## 🌐 Live Website
 
-Visit the portfolio: **[https://omkessarwani.github.io](https://omkessarwani.github.io)**
+Visit the portfolio: **[https://omkesarwani.dev](https://omkesarwani.dev)**
 
 ---
 
@@ -32,12 +33,12 @@ Visit the portfolio: **[https://omkessarwani.github.io](https://omkessarwani.git
 
 | 🎯 Metric | 📈 Achievement |
 |-----------|----------------|
-| 💼 **Years of Experience** | 10.5+ years in Frontend Engineering & Leadership |
+| 💼 **Years of Experience** | 11+ years in Frontend Engineering & Leadership |
 | 🚀 **User Impact** | Millions of users impacted daily through production systems |
 | ⚡ **Testing Efficiency** | Reduced QA cycles from 168 hours to 3 hours (98% reduction) |
 | 📦 **Code Quality** | Achieved 95% test coverage across major projects |
 | 👥 **Developer Impact** | Tools adopted by 600+ engineers |
-| 🏢 **Companies** | 5 Fortune 500 companies (Paytm, Optum, Deloitte, TCS, Nagarro) |
+| 🏢 **Companies** | 5 global enterprises (Paytm, Optum, Deloitte, TCS, Nagarro) |
 | 🎯 **Performance** | Improved Lighthouse scores from 65 to 90+ |
 | 💰 **Cost Savings** | Delivered significant cost savings through automation |
 
@@ -45,12 +46,12 @@ Visit the portfolio: **[https://omkessarwani.github.io](https://omkessarwani.git
 
 ## 👨‍💻 About
 
-**Frontend Architect and Engineering Leader** with **10.5+ years** of experience building and leading engineering teams at enterprise scale. Currently **open to Frontend Architect, Staff/Principal Engineer, and Engineering Manager opportunities**.
+**Frontend Architect and Engineering Leader** with **11+ years** of experience building and leading engineering teams at enterprise scale. Currently **open to Frontend Architect, Staff/Principal Engineer, and Engineering Manager opportunities**.
 
-Based in **Bangalore, India** with proven expertise in architecting **scalable UI platforms serving millions of daily users**, building **production-grade SDKs**, and leading **cross-functional engineering teams** at Fortune 500 companies to deliver measurable business impact.
+Based in **Bangalore, India** with proven expertise in architecting **scalable UI platforms serving millions of daily users**, building **production-grade SDKs**, and leading **cross-functional engineering teams** at global enterprises to deliver measurable business impact.
 
 ### Engineering Leadership
-- 👥 **Team Leadership**: Led and mentored engineers across 5 Fortune 500 companies, conducted 100+ technical interviews
+- 👥 **Team Leadership**: Led and mentored engineers across 5 global enterprises, conducted 100+ technical interviews
 - 🛠️ **Developer Impact**: Created tools adopted by 600+ engineers, improving productivity by 30%
 - 🏗️ **Technical Architecture**: Designed SDKs serving millions of daily users with 40% faster page loads
 - 📈 **Engineering Excellence**: Reduced QA cycles by 98% (168 hrs → 3 hrs), achieved 95% test coverage
@@ -98,12 +99,15 @@ Based in **Bangalore, India** with proven expertise in architecting **scalable U
 ## 💼 Professional Experience
 
 ### 🏢 Current Role
-**Senior Technical Lead** at **Paytm** (May 2022 – Present)
-- Leading development of central Frontend SDK powering the majority of Paytm app pages
-- Architected high-performance SDK with Rollup, Shadow DOM, and lazy-loading
-- Reduced regression testing cycles from 1 week to 3 hours with automated testing infrastructure
-- Built "Z-One" VS Code extension powered by MCP tools
-- Managing and mentoring 4-member frontend engineering team
+**Engineering Lead** at **Paytm** (May 2022 – Present)
+- Leading an **Agentic Workflow Platform** — teams define decision flows with agentic (AI-driven) and deterministic (rule-based) execution; visual no-code/low-code builder on React Flow for chatbots and backend automation
+- Building an in-house **Agentic SDLC platform** — repo knowledge base + RAG ("Brain"), a DAG-based SDLC executor, and ephemeral DevBoxes for automated E2E
+- Shipped the Agentic Platform via **canary-based rollouts** for safe, incremental production releases
+- Cut **Bitbucket CI runtime from 15 min to 8 min** by decoupling build from the PR pipeline and adding a PR-only branch gate for main/integration
+- Created **"Z-One"**, a VS Code / Cursor extension powered by MCP tools, widely adopted internally
+- Expanding scope into **backend systems** alongside frontend architecture
+- Led the central **Frontend SDK powering ~90% of Paytm app pages**; architected with Rollup + Shadow DOM and cut regression cycles from 1 week to 3 hours
+- Lead a 5-member engineering team of senior and lead engineers while contributing hands-on
 
 ### 📈 Previous Experience
 - **Senior Software Engineer** - Optum (Jan 2021 – May 2022)
@@ -138,6 +142,9 @@ This portfolio website showcases:
 ## 🎯 Portfolio Highlights
 
 ### Key Projects & Achievements
+- 🤖 **Agentic Workflow Platform**: Leading a platform for agentic (AI-driven) + rule-based decision flows with a React Flow no-code/low-code builder for chatbots and backend automation
+- 🧠 **Agentic SDLC Platform**: In-house SDLC automation — Brain (repo KB + RAG), a DAG-based executor, and ephemeral DevBoxes for E2E
+- ⚙️ **CI Pipeline Optimization**: Cut Bitbucket CI from 15 min to 8 min by splitting build from PR checks + PR-only branch gate
 - 📦 **Frontend SDK Platform**: Production SDK serving millions of daily users, improved Lighthouse scores 65 → 90+
 - 🧪 **Testing Infrastructure**: Achieved 95% coverage, reduced QA cycles by 98% (1 week → 3 hours)
 - 🛠️ **Developer Tools**: VS Code extension adopted by 600+ engineers, 30% productivity improvement
@@ -176,7 +183,7 @@ This portfolio website showcases:
 
 ## 📄 License
 
-© 2025 Om Prakash Kesarwani. All rights reserved.
+© 2026 Om Prakash Kesarwani. All rights reserved.
 
 ---
 
@@ -204,11 +211,11 @@ I'm **actively seeking** and **available immediately** for:
 - Driving engineering excellence, velocity, and quality
 - Collaborating with Product and Design on roadmap and strategy
 
-#### 🚀 Senior Technical Lead
-- Hands-on technical leadership for critical frontend initiatives
-- Team coordination, sprint planning, and delivery management
-- Technical guidance, code reviews, and architecture decisions
-- Stakeholder communication and cross-functional alignment
+#### 🚀 Engineering Lead
+- Driving technical strategy, architecture, and delivery for critical initiatives
+- Leading and growing engineering teams while staying hands-on
+- Owning end-to-end execution — from planning to production and quality
+- Building platforms, developer tooling, and AI-driven engineering workflows
 
 ### 🌍 Work Preferences
 
@@ -219,7 +226,7 @@ I'm **actively seeking** and **available immediately** for:
 
 ### 🤝 What I Bring
 
-- ✅ **10.5+ years** of proven frontend engineering experience
+- ✅ **11+ years** of proven frontend engineering experience
 - ✅ **Leadership experience** at scale (Paytm, Optum, Deloitte)
 - ✅ **Technical expertise** in React, Next.js, TypeScript, SDK development
 - ✅ **Team building** and mentorship skills
