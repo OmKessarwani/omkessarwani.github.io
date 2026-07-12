@@ -177,7 +177,6 @@ This portfolio website showcases:
 - 💼 **LinkedIn**: [linkedin.com/in/om-kesarwani-38934062](https://linkedin.com/in/om-kesarwani-38934062)
 - 🐙 **GitHub**: [github.com/OmKessarwani](https://github.com/OmKessarwani)
 - 📍 **Location**: Bangalore, Karnataka, India
-- 📱 **Phone**: +91 
 
 
 
@@ -240,7 +239,6 @@ I'm **actively seeking** and **available immediately** for:
 **Ready to discuss opportunities!** Feel free to reach out via:
 - 📧 Email: [omkes02@gmail.com](mailto:omkes02@gmail.com)
 - 💼 LinkedIn: [linkedin.com/in/om-kesarwani-38934062](https://linkedin.com/in/om-kesarwani-38934062)
-- 📱 Phone: +91 
 
 **Looking forward to exploring how I can contribute to your team's success!** 🚀
 
